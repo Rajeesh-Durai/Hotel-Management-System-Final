@@ -14,6 +14,6 @@ namespace HotelBooking.Repository.Hotel_Details_Services
         Task<object>? ByLocation(string location);
         Task<int> TotalRooms(string name);
 
-        Task<List<BookingTable>> RoomBooking(string name);
+        Task<List<BookingTable>> RoomBooking(string hotelname);
     }
 }

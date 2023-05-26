@@ -75,12 +75,12 @@ namespace HotelBooking.Repository.Hotel_Details_Services
             return total.Count;
         }
         //Booking the tickets and displaying it in a buffered table named BookingTable and returning it
-        public async Task<List<BookingTable>> RoomBooking(string name)
+        public async Task<List<BookingTable>> RoomBooking(string hotelname)
         {
             var booking=  (from room in _context.RoomDetails
                                 join hotel in _context.HotelDetails on room.HotelId equals hotel.HotelId
                                 join book in _context.BookingDetails on room.RoomId equals book.RoomId
-                                where hotel.RoomsAvailable== "Available" && hotel.HotelName== name
+                                where hotel.RoomsAvailable== "Available" && hotel.HotelName== hotelname
                                 select new BookingTable()
                                 {
                                     BookingId=book.BookingId,

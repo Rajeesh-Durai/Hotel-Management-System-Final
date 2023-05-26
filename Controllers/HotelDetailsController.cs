@@ -146,12 +146,12 @@ namespace HotelBooking.Controllers
         }
         [Authorize(Roles = "user")]
         // GET: api/HotelDetails/5
-        [HttpGet("{name}")]
-        public async Task<ActionResult<List<BookingTable>>> RoomBooking(string name)
+        [HttpGet("{hotelname}")]
+        public async Task<ActionResult<List<BookingTable>>> RoomBooking(string hotelname)
         {
             try
             {
-                var booking = await _context.RoomBooking(name);
+                var booking = await _context.RoomBooking(hotelname);
                 return Ok(booking);
             }
             catch (ArithmeticException ex)
