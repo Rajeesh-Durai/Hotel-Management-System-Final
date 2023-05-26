@@ -12,7 +12,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddDbContext<HotelDBContext>(optionsAction: options => options.UseSqlServer(builder.Configuration.GetConnectionString(name: "Hotel")));
 builder.Services.AddDbContext<RegContext>(op => op.UseSqlServer(builder.Configuration.GetConnectionString("Auth")));
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
 {
