@@ -14,6 +14,5 @@ namespace HotelBooking.Models
         public string RoomType { get; set;} = string.Empty;
         [Required]
         public int ChargePerDay { get; set; }
-        public ICollection<BookingDetails>? Bookings { get; set; }
     }
 }

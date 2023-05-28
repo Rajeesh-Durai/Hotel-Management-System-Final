@@ -79,11 +79,10 @@ namespace HotelBooking.Repository.Hotel_Details_Services
         {
             var booking=  (from room in _context.RoomDetails
                                 join hotel in _context.HotelDetails on room.HotelId equals hotel.HotelId
-                                join book in _context.BookingDetails on room.RoomId equals book.RoomId
                                 where hotel.RoomsAvailable== "Available" && hotel.HotelName== hotelname
                                 select new BookingTable()
                                 {
-                                    BookingId=book.BookingId,
+                                    
                                     HotelName=hotel.HotelName,
                                     BookingStatus="Success",
                                     RoomId=room.RoomId

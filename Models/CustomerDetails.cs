@@ -13,6 +13,6 @@ namespace HotelBooking.Models
         [Required]
         public string CustomerAddress { get; set; }= string.Empty;
 
-        public ICollection<BookingDetails>? BookingDetails { get; set; }
+     
     }
 }
