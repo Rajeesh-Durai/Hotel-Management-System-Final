@@ -43,7 +43,7 @@ namespace HotelBooking.Controllers
         [Authorize(Roles = "admin")]
         [Authorize(Roles ="user")]
         // GET: api/HotelDetails/5
-        [HttpGet("{id}")]
+        [HttpGet("Get Hotel Details")]
             public async Task<ActionResult<HotelDetails>> GetHotelDetails(int id)
             {
                 try
@@ -60,7 +60,7 @@ namespace HotelBooking.Controllers
         [Authorize(Roles = "admin")]
         [Authorize(Roles = "user")]
         // GET: api/HotelDetails/5
-        [HttpGet("{location}")]
+        [HttpGet("By Location")]
         public async Task<ActionResult<HotelDetails>> ByLocation(string location)
         {
             try
@@ -78,7 +78,7 @@ namespace HotelBooking.Controllers
         // PUT: api/HotelDetails/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [Authorize(Roles = "admin")]
-        [HttpPut("{id}")]
+        [HttpPut("Update Hotel Details")]
            public async Task<IActionResult> PutHotelDetails(int id, HotelDetails hotelDetails)
            {
             try
@@ -130,7 +130,7 @@ namespace HotelBooking.Controllers
 
         [Authorize(Roles = "user")]
         // GET: api/HotelDetails/5
-        [HttpGet("{name}")]
+        [HttpGet("Total Rooms")]
         public async Task<ActionResult<int>> TotalRooms(string name)
         {
             try
@@ -146,7 +146,7 @@ namespace HotelBooking.Controllers
         }
         [Authorize(Roles = "user")]
         // GET: api/HotelDetails/5
-        [HttpGet("{hotelname}")]
+        [HttpGet("Room Booking")]
         public async Task<ActionResult<List<BookingTable>>> RoomBooking(string hotelname)
         {
             try

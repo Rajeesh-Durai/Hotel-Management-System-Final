@@ -26,7 +26,7 @@ namespace HotelBooking.Controllers
         [Authorize(Roles = "admin")]
         [Authorize(Roles = "user")]
         // GET: api/RoomDetails
-        [HttpGet]
+        [HttpGet("Get Room Details")]
         public async Task<ActionResult<IEnumerable<RoomDetails>>> GetRoomDetails()
         {
             try
@@ -44,7 +44,7 @@ namespace HotelBooking.Controllers
         [Authorize(Roles = "admin")]
         [Authorize(Roles = "user")]
         // GET: api/RoomDetails/5
-        [HttpGet("{id}")]
+        [HttpGet("Get Room Details By ID")]
         public async Task<ActionResult<RoomDetails>> GetRoomDetails(int id)
         {
             try
@@ -60,7 +60,7 @@ namespace HotelBooking.Controllers
 
         }
         [Authorize(Roles ="user")]
-        [HttpGet("{chargeperday}")]
+        [HttpGet("Filter By Price")]
         public async Task<ActionResult<List<string>>> ByPriceRange(int chargeperday)
         {
             try

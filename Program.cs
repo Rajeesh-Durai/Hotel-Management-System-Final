@@ -13,7 +13,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<HotelDBContext>(optionsAction: options => options.UseSqlServer(builder.Configuration.GetConnectionString(name: "Hotel")));
-builder.Services.AddDbContext<RegContext>(op => op.UseSqlServer(builder.Configuration.GetConnectionString("Auth")));
+builder.Services.AddDbContext<RegContext>(optionsAction: options => options.UseSqlServer(builder.Configuration.GetConnectionString(name: "Auth")));
+
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
 {
     options.SerializerSettings.ReferenceLoopHandling =

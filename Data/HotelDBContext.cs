@@ -11,6 +11,5 @@ namespace HotelBooking.Data
         public DbSet<HotelDetails> HotelDetails { get; set; }
         public DbSet<RoomDetails> RoomDetails { get; set; }
 
-        public DbSet<BookingDetails> BookingDetails { get; set; }
     }
 }
